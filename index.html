@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Calculadora</title>
+    
+<link rel="sortcut icon" href="https://cdn.discordapp.com/attachments/1253060669255712869/1253072545658441788/Cidade-Bella-v2Logo-Monocromatica-Com-Fundo.png?ex=682643bf&is=6824f23f&hm=1714b8037d002ee9ad74ba91c3c602568c053d4376c559c247a07d16af29e39a&" type="image/x-icon" />
+</head>
+<body>
+    <div>
+        <img src="https://media.discordapp.net/attachments/1379910977448968325/1379915360337399859/GIF_BELLA.gif?ex=68454593&is=6843f413&hm=cb32516d8e1ac1d023358b1728d425283f33e270aafa35e4cc43f68d6b9773a7&=" style="posion: absolute; width: 1100px; height: 618px; opacity: 0.5; left: 5px;" />
+        <div>
+            <H1 style="position: absolute; left: 350px; top: -15px; text-shadow: 0px 4px 4px rgba(201, 140, 8, 0.877);">
+                BELLA MOTORS</h1>
+            <h3 style="position: absolute; left: 420px; top: 17px; text-shadow: 0px 4px 4px rgb(187, 114, 6);">
+                Calculadora</h3>
+            <button type="button" onclick="reload()" class="btn-default"
+                style="position: absolute; left: 716px; width: 88px; height: 50px; top: 15px;">Limpar</button>
+            <div
+                style="position: absolute; top: 90px; left: 20px; width: 180px; height: 120px; background-color: #b8adad1a;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #a79e9e34; height: 30px; width: 180px;">
+                    Freios
+                </h4>
+                <button type="button" onclick="limpaFreio()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="freio1" value="freio1" onchange="main()" type="radio" name="freio">Street -
+                            10.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="freio2" value="freio2" onchange="main()" type="radio" name="freio">Sport -
+                            15.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="freio3" value="freio3" onchange="main()" type="radio" name="freio">Race -
+                            20.000</label>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                style="position: absolute; top: 230px; left: 20px; width: 180px; height: 120px; background-color: #c4c4c425;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #9292923f; height: 30px; width: 180px;">
+                    Transmis.
+                </h4>
+                <button type="button" onclick="limpaTrans()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="trans1" type="radio" onchange="main()" name="trans">Street - 10.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="trans2" type="radio" onchange="main()" name="trans">Sport - 15.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="trans3" type="radio" onchange="main()" name="trans">Race - 20.000</label>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                style="position: absolute; top: 371px; left: 20px; width: 180px; height: 145px; background-color: #c4c4c423;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #92929231; height: 30px; width: 180px;">
+                    Suspensão
+                </h4>
+                <button type="button" onclick="limpaSus()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="sus1" onchange="main()" type="radio" name="sus">1º Stage - 5.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="sus2" onchange="main()" type="radio" name="sus">2º Stage - 10.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="sus3" onchange="main()" type="radio" name="sus">3º Stage - 15.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="sus4" onchange="main()" type="radio" name="sus">4º Stage - 20.000</label>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div
+                style="position: absolute; top: 90px; left: 245px; width: 180px; height: 165px; background-color: #c4c4c431;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #92929231; height: 30px; width: 180px;">
+                    Blindagens
+                </h4>
+                <button type="button" onclick="limpaBlin()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="blind1" onchange="main()" type="radio" name="blin">1º 20% - 50.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="blind2" onchange="main()" type="radio" name="blin">2º 40% - 60.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="blind3" onchange="main()" type="radio" name="blin">3º 60% - 70.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="blind4" onchange="main()" type="radio" name="blin">4º 80% - 80.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="blind5" onchange="main()" type="radio" name="blin">5º 100% - 90.000</label>
+                    </div>
+                </form>
+            </div>
+
+
+            <div
+                style="position: absolute; top: 283px; left: 245px; width: 180px; height: 65px; background-color: #c4c4c42c;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #92929236; height: 30px; width: 180px;">
+                    Turbo
+                </h4>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="checkbox">
+                        <label><input id="turbo" onclick="main()" type="checkbox">1 - 60.000</label>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div
+                style="position: absolute; top: 371px; left: 245px; width: 180px; height: 145px; background-color: #c4c4c42a;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #9292922d; height: 30px; width: 180px;">
+                    Motor
+                </h4>
+                <button type="button" onclick="limpaMotor()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="motor1" onchange="main()" type="radio" name="mot">1º Street - 10.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="motor2" onchange="main()" type="radio" name="mot">2º Sport - 20.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="motor3" onchange="main()" type="radio" name="mot">3º Race - 30.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="motor4" onchange="main()" type="radio" name="mot">4º Top - 40.000</label>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div
+                style="position: absolute; top: 90px; left: 475px; width: 180px; height: 230px; background-color: #c4c4c433;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #9292923a; height: 30px; width: 180px;">
+                    Visual
+                </h4>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="checkbox">
+                        <label><input id="buzina" onchange="main()" type="checkbox">Buzina - 20.000</label>
+                        <label><input id="xenon" onchange="main()" type="checkbox">Xenon - 40.000</label>
+                        <label><input id="neon" onchange="main()" type="checkbox">Neon - 30.000</label>
+                        <label><input id="rodas" onchange="main()" type="checkbox">Rodas - 90.000</label>
+                        <label><input id="corRodas" onchange="main()" type="checkbox">Cor rod. - 20.000</label>
+                        <label><input id="acessRodas" onchange="main()" type="checkbox">Acess. Rod. - 4.000</label>
+                        <label><input id="pintPri" onchange="main()" type="checkbox">Pint. Pri. - 10.000</label>
+                        <label><input id="pintSec" onchange="main()" type="checkbox">Pint. Sec. - 10.000</label>
+                        <label><input id="fumacapneu" onchange="main()" type="checkbox">fumacapneu - 30.000</label>
+                        <label><input id="placa" onchange="main()" type="checkbox">Placa - 10.000</label>
+                    </div>
+
+                </form>
+            </div>
+
+            <div
+                style="position: absolute; top: 90px; left: 680px; width: 180px; height: 165px; background-color: #c4c4c436;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #9292922f; height: 30px; width: 180px;">
+                    Vidros
+                </h4>
+                <button type="button" onclick="limpaVidros()"
+                    style="position: absolute; top: 5px; left: 1px; width: 26px; height: 20px;">
+                    <svg width="1em" onclick="" height="1em" viewBox="0 0 20 20" class="bi bi-arrow-counterclockwise"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z">
+                        </path>
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z">
+                        </path>
+                    </svg>
+                </button>
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div class="radio">
+                        <label><input id="vidro1" onchange="main()" type="radio" name="mot">1 Fume 100%- 40.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="vidro2" onchange="main()" type="radio" name="mot">2 Fume 70%- 40.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="vidro3" onchange="main()" type="radio" name="mot">3 Fume 50% - 40.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="vidro4" onchange="main()" type="radio" name="mot">4 fume 40% - 40.000</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="vidro5" onchange="main()" type="radio" name="mot">5 fume 30% - 40.000</label>
+                    </div>
+                </form>
+            </div>
+
+ <div
+
+            div>
+
+            <div
+                style="position: absolute; top: 10px; left: 125px; width: 180px; height: 70px; background-color: #dab308;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -10px; left: 0px; font-size: 22px;  background-color: #d4d1c933; height: 0px; width: 180px;">
+                    full tuning
+                </h4>
+
+                <form style="position: absolute; top: 25px; left: 20px;">
+                    <div>
+
+                        <button type="button" onclick="presetFull()"
+                            style="position: absolute; top: 7px; left: 13px; width: 120px;" class="btn default">Desemp.
+                            Max</button>
+
+                    </div>
+
+                </form>
+            </div>
+
+
+            <form>
+                <div class="input-group" style="position: absolute; width: 200px; top: 440px; left: 800px;">
+                    <span class="input-group-addon">Desconto %:</span>
+                    <input id="desconto" type="number" class="form-control" autocomplete="off" min="0" maxlength="4" on
+                        onkeyup="main()" onchange="main()" name="msg" placeholder="0%">
+                </div>
+                <div class="input-group" style="position: absolute; width: 320px; top: 500px; left: 750px;">
+                    <span class="input-group-addon">Total a cobrar:</span>
+                    <input id="total" type="text" readonly class="form-control" disabled name="msg" placeholder="0">
+                </div>
+            </form>
+
+
+            <div
+                style="position: absolute; top: 330px; left: 500px; width: 450px; height: 90px; background-color: #9b94942f;">
+                <h4
+                    style="position: absolute; font-weight: bold; text-align: center; top: -15px; left: 250px; font-size: 20px;  background-color: #929292; height: 30px; width: 180px;">
+                    Kit Reparo
+                </h4>
+                <form style="position: absolute; top: 25px; left: 270px;">
+                    <div>
+
+                        <button type="button" onclick="contagemAcesMeno()"
+                            style="position: absolute; top: 16px; left: -05px;" class="btn btn-danger">-</button>
+                        <p id="pAcesso" style="position: absolute; text-align: center; top: 25px; left: 67px;">0</p>
+                        <button type="button" onclick="contagemAcesAdd()"
+                            style="position: absolute; top: 16px; left: 115px;" class="btn btn-success">+</button>
+
+
+
+
+
+
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <label style="position: absolute; top: 590px; left: 20px; font-size: 13px;"> connect jogar.cidadebella.com </label>
+
+</body>
+
+<script>
+
+    // variaveis
+    var freio = 0;
+    var fumacapneu = 0;
+    var vidros = 0;
+    var corPri = 0;
+    var corSec = 0;
+    var neon = 0;
+    var placas = 0;
+    var acessRodas = 0;
+    var corRodas = 0;
+    var acessorios = 0;
+    var roda = 0;
+    var xenon = 0;
+    var turbo = 0;
+    var blind = 0;
+    var sus = 0;
+    var buzina = 0;
+    var trans = 0;
+    var motor = 0; 
+    var count = 0;
+    var desconto = 0;
+    var descontoL = 0;
+    // variaveis Liq
+    var freioL = 0;
+    var vidrosL = 0;
+    var corPriL = 0;
+    var corSecL = 0;
+    var neonL = 0;
+    var placasL = 0;
+    var acessRodasL = 0;
+    var corRodasL = 0;
+    var acessoriosL = 0;
+    var rodaL = 0;
+    var xenonL = 0;
+    var turboL = 0;
+    var blindL = 0;
+    var susL = 0;
+    var buzinaL = 0;
+    var transL = 0;
+    var motorL = 0;
+
+    //html
+    let turboCheck = document.getElementById("turbo");
+    let buzinaCheck = document.getElementById("buzina");
+    let xenonCheck = document.getElementById("xenon");
+    let neonCheck = document.getElementById("neon");
+    let rodasCheck = document.getElementById("rodas");
+    let corRodasCheck = document.getElementById("corRodas");
+    let acessRodasCheck = document.getElementById("acessRodas");
+    let pintPriCheck = document.getElementById("pintPri");
+    let pintSecCheck = document.getElementById("pintSec");
+    let placaCheck = document.getElementById("placa");
+    let fumacapneuCheck = document.getElementById("fumacapneu");
+    let totalP = document.getElementById("total");
+    let totalL = document.getElementById("totalL");
+    let descontoCampo = document.getElementById("desconto");
+
+    let vidroChek1 = document.getElementById("vidro1");
+    let vidroChek2 = document.getElementById("vidro2");
+    let vidroChek3 = document.getElementById("vidro3");
+    let vidroChek4 = document.getElementById("vidro4");
+    let vidroChek5 = document.getElementById("vidro5");
+
+    let motorChek1 = document.getElementById("motor1");
+    let motorChek2 = document.getElementById("motor2");
+    let motorChek3 = document.getElementById("motor3");
+    let motorChek4 = document.getElementById("motor4");
+
+    let freioChek1 = document.getElementById("freio1");
+    let freioChek2 = document.getElementById("freio2");
+    let freioChek3 = document.getElementById("freio3");
+
+    let transChek1 = document.getElementById("trans1");
+    let transChek2 = document.getElementById("trans2");
+    let transChek3 = document.getElementById("trans3");
+
+    let susChek1 = document.getElementById("sus1");
+    let susChek2 = document.getElementById("sus2");
+    let susChek3 = document.getElementById("sus3");
+    let susChek4 = document.getElementById("sus4");
+
+    let blindChek1 = document.getElementById("blind1");
+    let blindChek2 = document.getElementById("blind2");
+    let blindChek3 = document.getElementById("blind3");
+    let blindChek4 = document.getElementById("blind4");
+    let blindChek5 = document.getElementById("blind5");
+
+
+
+    function main() {
+
+
+        freios();
+        transmissao();
+        suspensao();
+        blindagem();
+        motorF();
+        vidrosF();
+        calculaVisual();
+
+        if (count != 0) {
+            acessorios = 7000 * count;
+            acessoriosL = 2700 * count;
+        } else {
+            acessoriosL = 0;
+            acessorios = 0;
+        }
+
+
+        let totalCalc1 = freio + vidros + corPri + corSec + neon + placas + acessRodas + corRodas + acessorios + roda + xenon + turbo + blind + sus + buzina + trans + motor;
+        let totalCalc2 = freioL + vidrosL + corPriL + corSecL + neonL + placasL + acessRodasL + corRodasL + acessoriosL + rodaL + xenonL + turboL + blindL + susL + buzinaL + transL + motorL;
+
+        if (descontoCampo.value >= 0) {
+
+
+            if (descontoCampo.value != null && descontoCampo.value != "" && descontoCampo != "0") {
+
+                descontoCa = descontoCampo.value;
+
+                if (descontoCa > 100) {
+                    descontoCa = 100;
+                }
+
+                descontoCampo.value = "";
+
+
+                desc = descontoCa / 100;
+                totDesc = totalCalc1 * desc;
+                desconto = totDesc;
+
+                descontoCampo.value = descontoCa;
+            } else {
+                desconto = 0;
+                descontoL = 0;
+            }
+        } else {
+            descontoCampo.value = "0";
+        }
+        totalP.value = (totalCalc1 - desconto).toLocaleString('pt-BR');
+        totalL.value = ((totalCalc1 - totalCalc2) - desconto).toLocaleString('pt-BR');
+    }
+
+    function calculaVisual() {
+
+        if (turboCheck.checked) {
+            turbo = 60000;
+            turboL = 15500;
+        } else {
+            turbo = 0;
+            turboL = 0;
+        }
+        if (buzinaCheck.checked) {
+            buzina = 20000;
+            buzinaL = 2700;
+        } else {
+            buzina = 0;
+            buzinaL = 0;
+        }
+        if (xenonCheck.checked) {
+            xenon = 40000;
+            xenonL = 2700;
+        } else {
+            xenon = 0;
+            xenonL = 0;
+        }
+        if (fumacapneuCheck.checked) {
+            xenon = 30000;
+            xenonL = 2700;
+        } else {
+            xenon = 0;
+            xenonL = 0;
+        }
+        if (neonCheck.checked) {
+            neon = 30000;
+            neonL = 2700;
+        } else {
+            neon = 0;
+            neonL = 0;
+        }
+        if (rodasCheck.checked) {
+            roda = 90000;
+            rodaL = 7200;
+        } else {
+            roda = 0;
+            rodaL = 0;
+        }
+        if (corRodasCheck.checked) {
+            corRodas = 20000;
+            corRodasL = 700;
+        } else {
+            corRodas = 0;
+            corRodasL = 0;
+        }
+        if (acessRodasCheck.checked) {
+            acessRodas = 4000;
+            acessRodasL = 2700;
+        } else {
+            acessRodas = 0;
+            acessRodasL = 0;
+        }
+
+
+        if (pintPriCheck.checked) {
+            corPri = 10000;
+            corPriL = 0;
+        } else {
+            corPri = 0;
+            corPriL = 0;
+        }
+        if (pintSecCheck.checked) {
+            corSec = 10000;
+            corSecL = 0;
+        } else {
+            corSec = 0;
+            corSecL = 0;
+        }
+        if (placaCheck.checked) {
+            placas = 10000;
+            placasL = 1700;
+        } else {
+            placas = 0;
+            placasL = 0;
+        }
+    }
+
+    function presetFull() {
+        /*let turboCheck = document.getElementById("turbo");
+        let motorChek4 = document.getElementById("motor4");
+        let freioChek3 = document.getElementById("freio3");
+        let transChek3 = document.getElementById("trans3");
+        let susChek4 = document.getElementById("sus4");
+        let blindChek5 = document.getElementById("blind5");*/
+
+        turboCheck.checked = true;
+        motorChek4.checked = true;
+        freioChek3.checked = true;
+        transChek3.checked = true;
+        susChek4.checked = true;
+        blindChek5.checked = true;
+
+        main();
+
+    }
+
+    function vidrosF() {
+
+        if (vidroChek1.checked) {
+            vidros = 40000;
+            vidrosL = 2700;
+        } else if (vidroChek2.checked) {
+            vidros = 40000;
+            vidrosL = 2700;
+        } else if (vidroChek3.checked) {
+            vidros = 40000;
+            vidrosL = 2200;
+        } else if (vidroChek4.checked) {
+            vidros = 40000;
+            vidrosL = 2200;
+        } else if (vidroChek5.checked) {
+            vidros = 40000;
+            vidrosL = 1200; }
+        }
+
+    function motorF() {
+
+        if (motorChek1.checked) {
+            motor = 10000;
+            motorL = 32000;
+        } else if (motorChek2.checked) {
+            motor = 20000;
+            motorL = 38000;
+        } else if (motorChek3.checked) {
+            motor = 30000;
+            motorL = 44000;
+        } else if (motorChek4.checked) {
+            motor = 40000;
+            motorL = 50000;
+        }
+    }
+
+    function freios() {
+
+        if (freioChek1.checked) {
+            freio = 10000;
+            freioL = 32000;
+        } else if (freioChek2.checked) {
+            freio = 15000;
+            freioL = 37000;
+        } else if (freioChek3.checked) {
+            freio = 20000;
+            freioL = 42000;
+        }
+    }
+
+    function transmissao() {
+
+        if (transChek1.checked) {
+            trans = 10000;
+            transL = 32000;
+        } else if (transChek2.checked) {
+            trans = 15000;
+            transL = 38000;
+        } else if (transChek3.checked) {
+            trans = 20000;
+            transL = 44000;
+        }
+    }
+
+    function suspensao() {
+
+        if (susChek1.checked) {
+            sus = 5000;
+            susL = 27000;
+        } else if (susChek2.checked) {
+            sus = 10000;
+            susL = 33000;
+        } else if (susChek3.checked) {
+            sus = 15000;
+            susL = 39000;
+        } else if (susChek4.checked) {
+            sus = 20000
+            susL = 45000
+        }
+    }
+
+    function contagemAcesAdd() {
+        if (count >= 0) {
+            count++;
+        }
+        document.getElementById("pAcesso").innerHTML = count;
+        main();
+    }
+
+    function contagemAcesMeno() {
+        if (count != 0) {
+            count--;
+        }
+        document.getElementById("pAcesso").innerHTML = count;
+        main();
+    }
+
+    function blindagem() {
+
+        if (blindChek1.checked) {
+            blind = 50000;
+            blindL = 70000;
+        } else if (blindChek2.checked) {
+            blind = 60000;
+            blindL = 80000;
+        } else if (blindChek3.checked) {
+            blind = 70000;
+            blindL = 90000;
+        } else if (blindChek4.checked) {
+            blind = 80000;
+            blindL = 100000;
+        } else if (blindChek5.checked) {
+            blind = 90000;
+            blindL = 110000;
+        }
+    }
+
+    function limpaFreio() {
+        freioChek1.checked = false;
+        freioChek2.checked = false;
+        freioChek3.checked = false;
+        freio = 0;
+        freioL = 0;
+        main();
+    }
+
+    function limpaTrans() {
+        transChek1.checked = false;
+        transChek2.checked = false;
+        transChek3.checked = false;
+
+        trans = 0;
+        transL = 0;
+        main();
+    }
+
+    function limpaSus() {
+        susChek1.checked = false;
+        susChek2.checked = false;
+        susChek3.checked = false;
+        susChek4.checked = false;
+
+        sus = 0;
+        susL = 0;
+        main();
+    }
+
+    function limpaBlin() {
+        blindChek1.checked = false;
+        blindChek2.checked = false;
+        blindChek3.checked = false;
+        blindChek4.checked = false;
+        blindChek5.checked = false;
+        blindL = 0;
+        blind = 0;
+        main();
+    }
+
+    function limpaMotor() {
+        motorChek1.checked = false;
+        motorChek2.checked = false;
+        motorChek3.checked = false;
+        motorChek4.checked = false;
+
+        motor = 0;
+        motorL = 0;
+        main();
+    }
+
+    function limpaVidros() {
+        vidroChek1.checked = false;
+        vidroChek2.checked = false;
+        vidroChek3.checked = false;
+        vidroChek4.checked = false;
+        vidroChek5.checked = false;
+
+        vidros = 0;
+        vidrosL = 0;
+        main();
+    }
+
+
+
+
+
+    function reload() {
+        location.reload();
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>
